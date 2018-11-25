@@ -1,15 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlgorithmsDataStructures
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
+            var list = GenerateLinkedListElements(new LinkedList(), 7);
+
+            var node = list.head;
+            while (node != null)
+            {
+                Console.Write("{0} ", node.value);
+                node = node.next;
+            }
+        }
+
+        public static LinkedList GenerateLinkedListElements(LinkedList list, int count)
+        {
+            var n = new Random();
+            while (count > 0)
+            {
+                list.AddInTail(new Node(n.Next(255)));
+                count--;
+            }
+            return list;
         }
     }
 }

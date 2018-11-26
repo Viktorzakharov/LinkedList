@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AlgorithmsDataStructures
 {
@@ -121,7 +120,7 @@ namespace AlgorithmsDataStructures
 
         public void InsertAfter(Node _nodeAfter, Node _nodeToInsert) //Метод вставки узла после заданного узла
         {
-            if (_nodeAfter is null && head is null)
+            if (_nodeAfter == null && head == null)
             {
                 _nodeToInsert.next = null;
                 head = _nodeToInsert;

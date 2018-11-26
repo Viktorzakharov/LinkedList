@@ -57,6 +57,7 @@ namespace AlgorithmsDataStructures
 
         public bool Remove(int _value) //Метод удаления одного узла по его значению
         {
+            if (head == null) return false;
             if (head.value == _value)
             {
                 if (head.next == null) tail = null;
@@ -81,6 +82,7 @@ namespace AlgorithmsDataStructures
 
         public void RemoveAll(int _value) //Метод удаления всех узлов по конкретному значению
         {
+            if (head == null) return;
             while (head.value == _value)
             {
                 if (head.next == null) tail = null;

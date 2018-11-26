@@ -15,11 +15,15 @@ namespace Test
         {
             var list = Program.GenerateLinkedListElements(new LinkedList(), ElementsCount);
             list.AddInTail(new Node(TestValue));
+            list.AddInTail(new Node(TestValue));
             Program.GenerateLinkedListElements(list, ElementsCount);
 
             var node = list.Find(TestValue);
-            list.Remove(TestValue);
+            Assert.IsTrue(list.Remove(TestValue));
             Assert.AreNotEqual(node, list.Find(TestValue));
+
+            var list1 = new LinkedList();
+            Assert.IsFalse(list1.Remove(TestValue));
         }
 
         [TestMethod]
@@ -97,7 +101,7 @@ namespace Test
         public void TestSumTwoListsElements()
         {
             var list = Program.GenerateLinkedListElements(new LinkedList(), ElementsCount);
-            var list2 = Program.GenerateLinkedListElements(new LinkedList(), ElementsCount);
+            var list2 = Program.GenerateLinkedListElements(new LinkedList(), ElementsCount2);
 
             var resultList = LinkedList.SumTwoListsElements(list, list2);
             if (list.length == list2.length)

@@ -64,6 +64,8 @@ namespace AlgorithmsDataStructures
                 head = head.next;
                 return true;
             }
+            else if (head.next == null) return false;
+
             var node = head;
             while (node != null)
             {
@@ -85,10 +87,16 @@ namespace AlgorithmsDataStructures
             if (head == null) return;
             while (head.value == _value)
             {
-                if (head.next == null) tail = null;
+                if (head.next == null)
+                {
+                    Clear();
+                    return;
+                }
                 head = head.next;
                 length--;
             }
+            if (head.next == null) return;
+
             var node = head;
             while (node != null)
             {

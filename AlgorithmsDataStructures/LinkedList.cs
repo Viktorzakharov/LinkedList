@@ -60,11 +60,12 @@ namespace AlgorithmsDataStructures
             if (head == null) return false;
             if (head.value == _value)
             {
-                if (head.next == null) tail = null;
+                if (head.Equals(tail)) tail = null;
                 head = head.next;
+                length--;
                 return true;
             }
-            else if (head.next == null) return false;
+            else if (head.Equals(tail)) return false;
 
             var node = head;
             while (node != null)
@@ -87,7 +88,7 @@ namespace AlgorithmsDataStructures
             if (head == null) return;
             while (head.value == _value)
             {
-                if (head.next == null)
+                if (head.Equals(tail))
                 {
                     Clear();
                     return;

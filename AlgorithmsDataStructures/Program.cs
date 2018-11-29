@@ -14,6 +14,7 @@ namespace AlgorithmsDataStructures
                 Console.Write("{0} ", node.value);
                 node = node.next;
             }
+            Console.WriteLine();
         }
 
         public static LinkedList GenerateLinkedListElements(LinkedList list, int count)
